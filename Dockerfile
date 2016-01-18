@@ -11,5 +11,5 @@ RUN chmod +x /runnode.sh /dumb-init
 
 WORKDIR /app
 
-ENTRYPOINT ["/runjava.sh"]
+ENTRYPOINT ["/runnode.sh"]
 
