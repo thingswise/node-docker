@@ -20,7 +20,7 @@ function start_node() {
       ( mkdir -p $main_dir && cd $main_dir && tar zxf $archive/$tgz --strip=1 --keep-newer-files ) || exit 3
     fi
   fi
-  cd $wdi
+  cd $wd
   npm install && npm prune && exec node $exec 
 }
 
