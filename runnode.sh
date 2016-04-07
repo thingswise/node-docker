@@ -21,6 +21,12 @@ function start_node() {
     fi
   fi
   cd $wd
+  if [ ! -z $HTTP_PROXY ]; then
+    npm config set proxy "$HTTP_PROXY"
+  fi
+  if [ ! -z $HTTPS_PROXY ]; then
+    npm config set https_proxy "$HTTPS_PROXY"
+  fi
   npm install && npm prune && exec node $exec 
 }
 
