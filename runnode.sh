@@ -3,6 +3,7 @@
 wd=${NODE_WORKDIR:-.}
 exec=${NODE_SCRIPT:-server.js}
 archive=${APP_ARCHIVE:-}
+args=$*
 
 function start_node() {
   if [ -f .lock ]; then
@@ -27,7 +28,7 @@ function start_node() {
   if [ ! -z $HTTPS_PROXY ]; then
     npm config set https_proxy "$HTTPS_PROXY"
   fi
-  npm install && npm prune && exec node $exec 
+  npm install && npm prune && exec node $exec $args
 }
 
 rm -f .lock
