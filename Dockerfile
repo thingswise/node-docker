@@ -1,4 +1,4 @@
-FROM node:0.12
+FROM node:4.6.0
 MAINTAINER Alexander Lukichev
 EXPOSE 5000
 
